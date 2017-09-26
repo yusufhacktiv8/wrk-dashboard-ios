@@ -21,6 +21,8 @@ import UIKit
     var valueLabel: UILabel? = nil
     var titleLabel: UILabel? = nil
     var detailsButton: UIButton? = nil
+    var legend1Label: UILabel? = nil
+    var legend1Circle: UIView? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,12 +58,24 @@ import UIKit
         }
     }
     
+    @IBInspectable var legend1: String = "Legend 1" {
+        didSet {
+            setupLabels()
+        }
+    }
+    
+    @IBInspectable var legend1Color: UIColor = UIColor.black {
+        didSet {
+            setupLabels()
+        }
+    }
+    
     private func setupLabels() {
-//        self.backgroundColor = UIColor(red:0.23, green:0.39, blue:0.73, alpha:1.0)
-        
         setupValueLabel()
         setupTitleLabel()
+        setupLegend1Label()
         setupButton()
+        setupLegend1Circle()
     }
     
     private func setupValueLabel() {
@@ -102,8 +116,6 @@ import UIKit
         titleLabel.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.ultraLight)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        titleLabel.widthAnchor.constraint(equalToConstant: 105.0).isActive = true
         let margins = self.layoutMarginsGuide
         
         addSubview(titleLabel)
@@ -117,10 +129,7 @@ import UIKit
         if self.detailsButton != nil {
             self.detailsButton?.removeFromSuperview()
         } else {
-//            self.detailsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 75, height: 27))
-            
-            self.detailsButton = UIButton(type: .custom) as UIButton
-            self.detailsButton?.frame = CGRect(x: 0, y: 0, width: 75, height: 27)
+            self.detailsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 75, height: 27))
         }
         
         let detailsButton = self.detailsButton!
@@ -130,16 +139,68 @@ import UIKit
         detailsButton.layer.borderColor = UIColor.white.cgColor
         detailsButton.setTitleColor(.black, for: .normal)
         detailsButton.setTitle("Details", for: .normal)
+        detailsButton.addTarget(self, action: #selector(DashboardChart.detailsButtonTapped(button:)), for: .touchUpInside)
         
         detailsButton.translatesAutoresizingMaskIntoConstraints = false
         detailsButton.heightAnchor.constraint(equalToConstant: 37.0).isActive = true
-        detailsButton.widthAnchor.constraint(equalToConstant: 95.0).isActive = true
+        detailsButton.widthAnchor.constraint(equalToConstant: 85.0).isActive = true
         let margins = self.layoutMarginsGuide
         
         addSubview(detailsButton)
         
-        detailsButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 150).isActive = true
+        detailsButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 160).isActive = true
         detailsButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10).isActive = true
+    }
+    
+    @objc func detailsButtonTapped(button: UIButton) {
+        print("Button pressed")
+    }
+    
+    private func setupLegend1Label() {
+        if self.legend1Label != nil {
+            self.legend1Label?.removeFromSuperview()
+        } else {
+            self.legend1Label = UILabel()
+        }
+        
+        let legend1Label = self.legend1Label!
+        legend1Label.text = legend1
+        legend1Label.textColor = legend1Color
+        legend1Label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.ultraLight)
+        
+        legend1Label.translatesAutoresizingMaskIntoConstraints = false
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(legend1Label)
+        
+        legend1Label.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 42).isActive = true
+        legend1Label.topAnchor.constraint(equalTo: margins.topAnchor, constant: 60).isActive = true
+    }
+    
+    private func setupLegend1Circle() {
+        if self.legend1Circle != nil {
+            self.legend1Circle?.removeFromSuperview()
+        } else {
+            self.legend1Circle = UIView()
+        }
+        
+        let legend1Circle = self.legend1Circle!
+        legend1Circle.backgroundColor = UIColor.clear
+        legend1Circle.translatesAutoresizingMaskIntoConstraints = false
+        legend1Circle.heightAnchor.constraint(equalToConstant: 5.0).isActive = true
+        legend1Circle.widthAnchor.constraint(equalToConstant: 5.0).isActive = true
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(legend1Circle)
+        
+        legend1Circle.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 30).isActive = true
+        legend1Circle.topAnchor.constraint(equalTo: margins.topAnchor, constant: 68).isActive = true
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0), radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = UIColor.yellow.cgColor
+        legend1Circle.layer.addSublayer(shapeLayer)
     }
     
 }
