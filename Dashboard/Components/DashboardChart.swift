@@ -117,15 +117,23 @@ import UIKit
         if self.detailsButton != nil {
             self.detailsButton?.removeFromSuperview()
         } else {
-            self.detailsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 75, height: 27))
+//            self.detailsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 75, height: 27))
+            
+            self.detailsButton = UIButton(type: .custom) as UIButton
+            self.detailsButton?.frame = CGRect(x: 0, y: 0, width: 75, height: 27)
         }
         
         let detailsButton = self.detailsButton!
-        detailsButton.setTitle("Details", for: UIControlState.normal)
+        detailsButton.backgroundColor = .white
+        detailsButton.layer.cornerRadius = 18
+        detailsButton.layer.borderWidth = 1
+        detailsButton.layer.borderColor = UIColor.white.cgColor
+        detailsButton.setTitleColor(.black, for: .normal)
+        detailsButton.setTitle("Details", for: .normal)
         
         detailsButton.translatesAutoresizingMaskIntoConstraints = false
-        detailsButton.heightAnchor.constraint(equalToConstant: 27.0).isActive = true
-        detailsButton.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
+        detailsButton.heightAnchor.constraint(equalToConstant: 37.0).isActive = true
+        detailsButton.widthAnchor.constraint(equalToConstant: 95.0).isActive = true
         let margins = self.layoutMarginsGuide
         
         addSubview(detailsButton)
