@@ -23,6 +23,8 @@ import UIKit
     var detailsButton: UIButton? = nil
     var legend1Label: UILabel? = nil
     var legend1Circle: UIView? = nil
+    var legend2Label: UILabel? = nil
+    var legend2Circle: UIView? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,12 +72,38 @@ import UIKit
         }
     }
     
+    @IBInspectable var legend2: String = "Legend 2" {
+        didSet {
+            setupLabels()
+        }
+    }
+    
+    @IBInspectable var legend2Color: UIColor = UIColor.black {
+        didSet {
+            setupLabels()
+        }
+    }
+    
+    @IBInspectable var circle1Color: UIColor = UIColor.gray {
+        didSet {
+            setupLabels()
+        }
+    }
+    
+    @IBInspectable var circle2Color: UIColor = UIColor.gray {
+        didSet {
+            setupLabels()
+        }
+    }
+    
     private func setupLabels() {
         setupValueLabel()
         setupTitleLabel()
-        setupLegend1Label()
         setupButton()
+        setupLegend1Label()
         setupLegend1Circle()
+        setupLegend2Label()
+        setupLegend2Circle()
     }
     
     private func setupValueLabel() {
@@ -194,13 +222,60 @@ import UIKit
         addSubview(legend1Circle)
         
         legend1Circle.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 30).isActive = true
-        legend1Circle.topAnchor.constraint(equalTo: margins.topAnchor, constant: 68).isActive = true
+        legend1Circle.topAnchor.constraint(equalTo: margins.topAnchor, constant: 69).isActive = true
         
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0), radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.yellow.cgColor
+        shapeLayer.fillColor = circle1Color.cgColor
         legend1Circle.layer.addSublayer(shapeLayer)
+    }
+    
+    private func setupLegend2Label() {
+        if self.legend2Label != nil {
+            self.legend2Label?.removeFromSuperview()
+        } else {
+            self.legend2Label = UILabel()
+        }
+        
+        let legend2Label = self.legend2Label!
+        legend2Label.text = legend2
+        legend2Label.textColor = legend2Color
+        legend2Label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.ultraLight)
+        
+        legend2Label.translatesAutoresizingMaskIntoConstraints = false
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(legend2Label)
+        
+        legend2Label.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 130).isActive = true
+        legend2Label.topAnchor.constraint(equalTo: margins.topAnchor, constant: 60).isActive = true
+    }
+    
+    private func setupLegend2Circle() {
+        if self.legend2Circle != nil {
+            self.legend2Circle?.removeFromSuperview()
+        } else {
+            self.legend2Circle = UIView()
+        }
+        
+        let legend2Circle = self.legend2Circle!
+        legend2Circle.backgroundColor = UIColor.clear
+        legend2Circle.translatesAutoresizingMaskIntoConstraints = false
+        legend2Circle.heightAnchor.constraint(equalToConstant: 5.0).isActive = true
+        legend2Circle.widthAnchor.constraint(equalToConstant: 5.0).isActive = true
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(legend2Circle)
+        
+        legend2Circle.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 118).isActive = true
+        legend2Circle.topAnchor.constraint(equalTo: margins.topAnchor, constant: 69).isActive = true
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0), radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: true)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = circle2Color.cgColor
+        legend2Circle.layer.addSublayer(shapeLayer)
     }
     
 }
