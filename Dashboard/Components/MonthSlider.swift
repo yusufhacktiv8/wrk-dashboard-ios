@@ -30,8 +30,18 @@ import UIKit
         setupButtons()
     }
     
+    private func resetBackgroundColors() {
+        for button in monthButtons {
+            button.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
+            button.setTitleColor(UIColor.gray, for: .normal)
+        }
+    }
+    
     @objc func ratingButtonTapped(button: UIButton) {
         print("Button pressed 👍")
+        resetBackgroundColors()
+        button.backgroundColor = UIColor.lightGray
+        button.setTitleColor(UIColor.white, for: .normal)
     }
     
     private func setupButtons() {
@@ -76,7 +86,7 @@ import UIKit
 //            button.widthAnchor.constraint(equalToConstant: 22.0).isActive = true
             
             
-            button.addTarget(self, action: #selector(MonthSlider.ratingButtonTapped(button:)), for: .touchUpOutside)
+            button.addTarget(self, action: #selector(MonthSlider.ratingButtonTapped(button:)), for: .touchUpInside)
             
             let buttonView = UIView()
             buttonView.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
