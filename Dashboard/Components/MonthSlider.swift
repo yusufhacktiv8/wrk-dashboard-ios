@@ -69,14 +69,26 @@ import UIKit
             }
             button.setTitle(title, for: .normal)
             button.setTitleColor(UIColor.gray, for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
             
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-//            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+//            button.widthAnchor.constraint(equalToConstant: 22.0).isActive = true
             
-//            button.addTarget(self, action: #selector(MonthSlider.ratingButtonTapped(button:)), for: .touchDown)
             
-            addArrangedSubview(button)
+            button.addTarget(self, action: #selector(MonthSlider.ratingButtonTapped(button:)), for: .touchUpOutside)
+            
+            let buttonView = UIView()
+            buttonView.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
+            buttonView.translatesAutoresizingMaskIntoConstraints = false
+            buttonView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+            buttonView.addSubview(button)
+            
+            button.widthAnchor.constraint(equalTo: buttonView.widthAnchor, multiplier: 0.6).isActive = true
+            button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor).isActive = true
+            button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor).isActive = true
+            
+            addArrangedSubview(buttonView)
             
             monthButtons.append(button)
         }
