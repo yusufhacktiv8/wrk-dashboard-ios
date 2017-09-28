@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13Y-PP-7wD" customClass="DashboardChart" customModule="Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="293.5"/>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.39215686274509803" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="wK0-g2-Rbb"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,12 +45,46 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="legend2" value="Rencana"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-7i-7Uj">
+                                <rect key="frame" x="0.0" y="313.5" width="375" height="40"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGQ-uz-Lr4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Cwx-P7-Dzp" customClass="MonthSlider" customModule="Dashboard" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="750" height="40"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Cwx-P7-Dzp" firstAttribute="top" secondItem="jGQ-uz-Lr4" secondAttribute="top" id="0V0-yR-TH3"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cwx-P7-Dzp" secondAttribute="bottom" id="5Ey-JG-zlN"/>
+                                            <constraint firstItem="Cwx-P7-Dzp" firstAttribute="height" secondItem="jGQ-uz-Lr4" secondAttribute="height" id="7vo-gV-E5m"/>
+                                            <constraint firstItem="Cwx-P7-Dzp" firstAttribute="leading" secondItem="jGQ-uz-Lr4" secondAttribute="leading" id="DRL-BB-Bpx"/>
+                                            <constraint firstItem="Cwx-P7-Dzp" firstAttribute="width" secondItem="jGQ-uz-Lr4" secondAttribute="width" multiplier="2" id="Qr0-7D-deN"/>
+                                            <constraint firstItem="Cwx-P7-Dzp" firstAttribute="centerY" secondItem="jGQ-uz-Lr4" secondAttribute="centerY" id="ZvC-Hz-KE8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cwx-P7-Dzp" secondAttribute="trailing" id="nXY-Gy-PY7"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jGQ-uz-Lr4" secondAttribute="trailing" id="0jD-dN-j1j"/>
+                                    <constraint firstAttribute="height" constant="40" id="Hh5-ga-sja"/>
+                                    <constraint firstItem="jGQ-uz-Lr4" firstAttribute="leading" secondItem="4hF-7i-7Uj" secondAttribute="leading" id="Nbd-1H-AU3"/>
+                                    <constraint firstItem="jGQ-uz-Lr4" firstAttribute="top" secondItem="4hF-7i-7Uj" secondAttribute="top" id="WVo-r4-Hlc"/>
+                                    <constraint firstAttribute="bottom" secondItem="jGQ-uz-Lr4" secondAttribute="bottom" id="sPD-w4-HsB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="13Y-PP-7wD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FEL-2P-XdY"/>
-                            <constraint firstItem="13Y-PP-7wD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sgo-EA-5nW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="13Y-PP-7wD" secondAttribute="trailing" id="wMJ-vS-6co"/>
+                            <constraint firstItem="4hF-7i-7Uj" firstAttribute="top" secondItem="13Y-PP-7wD" secondAttribute="bottom" id="AGX-mQ-ecL"/>
+                            <constraint firstItem="13Y-PP-7wD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AL0-e6-h5Q"/>
+                            <constraint firstItem="13Y-PP-7wD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XjX-SP-bWL"/>
+                            <constraint firstItem="13Y-PP-7wD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mYZ-Bu-GrW"/>
+                            <constraint firstItem="4hF-7i-7Uj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pyc-s6-zWf"/>
+                            <constraint firstItem="4hF-7i-7Uj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rDF-RG-dkj"/>
+                            <constraint firstItem="4hF-7i-7Uj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rgO-qd-NHX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

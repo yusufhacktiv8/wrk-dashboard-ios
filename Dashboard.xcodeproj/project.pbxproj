@@ -15,6 +15,7 @@
 		2D66894A1F79E5DD001F56ED /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689491F79E5DD001F56ED /* DashboardTests.swift */; };
 		2D6689551F79E5DD001F56ED /* DashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689541F79E5DD001F56ED /* DashboardUITests.swift */; };
 		2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */; };
+		2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */; };
 		2E9E96CB9BE788583DD04EDE /* Pods_Dashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1F52F619696214FEA5FB4C /* Pods_Dashboard.framework */; };
 		5FD51D914DFD8F9DDA2B9758 /* Pods_DashboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFC58273D4D70DC2D0558DB /* Pods_DashboardTests.framework */; };
 		C39F42A39ABD44FFF2CDABBD /* Pods_DashboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F83BF65BA3E2A5DDC18765 /* Pods_DashboardUITests.framework */; };
@@ -56,6 +57,7 @@
 		2D6689541F79E5DD001F56ED /* DashboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardUITests.swift; sourceTree = "<group>"; };
 		2D6689561F79E5DD001F56ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChart.swift; sourceTree = "<group>"; };
+		2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSlider.swift; sourceTree = "<group>"; };
 		6E9939B0A6A2151628954B86 /* Pods-Dashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.release.xcconfig"; sourceTree = "<group>"; };
 		99F83BF65BA3E2A5DDC18765 /* Pods_DashboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DashboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1F52F619696214FEA5FB4C /* Pods_Dashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */,
+				2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */,
+				2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */,
 				2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */,
 				2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */,
 			);
