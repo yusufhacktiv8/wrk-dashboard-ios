@@ -75,12 +75,50 @@
                                     <constraint firstAttribute="bottom" secondItem="jGQ-uz-Lr4" secondAttribute="bottom" id="sPD-w4-HsB"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3tP-eu-X3i">
+                                <rect key="frame" x="0.0" y="353.5" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0yK-pB-xMC"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SummaryTableViewCell" rowHeight="60" id="JXg-qr-oBb" customClass="SummaryTableViewCell" customModule="Dashboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JXg-qr-oBb" id="AaF-VN-GUr">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8R-yc-g61" customClass="Triangle" customModule="Dashboard" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="25" width="20" height="20"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="AsQ-xK-wKC"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Sam-kl-C5d"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U8R-yc-g61" firstAttribute="leading" secondItem="AaF-VN-GUr" secondAttribute="leading" constant="10" id="9Pk-YJ-CUM"/>
+                                                <constraint firstItem="U8R-yc-g61" firstAttribute="centerY" secondItem="AaF-VN-GUr" secondAttribute="centerY" constant="5.25" id="bRX-Rz-JQG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="statusArrow" destination="U8R-yc-g61" id="ICv-mf-hjr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4hF-7i-7Uj" firstAttribute="top" secondItem="13Y-PP-7wD" secondAttribute="bottom" id="AGX-mQ-ecL"/>
                             <constraint firstItem="13Y-PP-7wD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AL0-e6-h5Q"/>
+                            <constraint firstItem="3tP-eu-X3i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F2c-dw-n1R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3tP-eu-X3i" secondAttribute="trailing" id="G93-Tg-4Fp"/>
                             <constraint firstItem="13Y-PP-7wD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XjX-SP-bWL"/>
+                            <constraint firstItem="3tP-eu-X3i" firstAttribute="top" secondItem="4hF-7i-7Uj" secondAttribute="bottom" id="ZlB-FX-9Sm"/>
                             <constraint firstItem="13Y-PP-7wD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mYZ-Bu-GrW"/>
                             <constraint firstItem="4hF-7i-7Uj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pyc-s6-zWf"/>
                             <constraint firstItem="4hF-7i-7Uj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rDF-RG-dkj"/>
@@ -88,6 +126,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="summaryTableView" destination="3tP-eu-X3i" id="kf1-SY-7mw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
