@@ -10,6 +10,7 @@
 		2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */; };
 		2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */; };
 		2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */; };
+		2D5E80041F7DC8BF0065B656 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80031F7DC8BF0065B656 /* MainViewController.swift */; };
 		2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689341F79E5DD001F56ED /* AppDelegate.swift */; };
 		2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689361F79E5DD001F56ED /* ViewController.swift */; };
 		2D66893A1F79E5DD001F56ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6689381F79E5DD001F56ED /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		2D5E80031F7DC8BF0065B656 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2D6689311F79E5DD001F56ED /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6689341F79E5DD001F56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6689361F79E5DD001F56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				2D66893B1F79E5DD001F56ED /* Assets.xcassets */,
 				2D66893D1F79E5DD001F56ED /* LaunchScreen.storyboard */,
 				2D6689401F79E5DD001F56ED /* Info.plist */,
+				2D5E80031F7DC8BF0065B656 /* MainViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */,
 				2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */,
 				2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */,
+				2D5E80041F7DC8BF0065B656 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
