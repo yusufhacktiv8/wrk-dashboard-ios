@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="476" y="-567.16641679160421"/>
         </scene>
-        <!--Select Month-->
+        <!--Filter-->
         <scene sceneID="QUD-5a-B56">
             <objects>
                 <viewController storyboardIdentifier="monthYearPickerViewController" modalPresentationStyle="formSheet" id="lrY-yo-53n" customClass="MonthYearPickerViewController" customModule="Dashboard" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OIJ-Uh-xaX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Month" id="H2a-Xl-Y1O">
+                    <navigationItem key="navigationItem" title="Filter" id="H2a-Xl-Y1O">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ck6-Ns-U5V">
                             <connections>
                                 <action selector="selectMonthYear:" destination="lrY-yo-53n" id="Eeg-gF-FmM"/>
