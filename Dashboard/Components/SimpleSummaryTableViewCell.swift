@@ -1,5 +1,5 @@
 //
-//  SummaryTableViewCell.swift
+//  SimpleSummaryTableViewCell.swift
 //  Dashboard
 //
 //  Created by Muhammad Yusuf on 9/28/17.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class SummaryTableViewCell: UITableViewCell {
+class SimpleSummaryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var statusArrow: Triangle!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var percentageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

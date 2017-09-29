@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */; };
 		2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */; };
+		2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */; };
 		2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689341F79E5DD001F56ED /* AppDelegate.swift */; };
 		2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689361F79E5DD001F56ED /* ViewController.swift */; };
 		2D66893A1F79E5DD001F56ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6689381F79E5DD001F56ED /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		2CBAAD23385221E30C4F6755 /* Pods-DashboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DashboardTests/Pods-DashboardTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D6689311F79E5DD001F56ED /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6689341F79E5DD001F56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6689361F79E5DD001F56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2D5E80021F7DBCC90065B656 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2D6689281F79E5DD001F56ED = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +141,7 @@
 		2D6689331F79E5DD001F56ED /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				2D5E80021F7DBCC90065B656 /* Helpers */,
 				2DE0FB281F7A0388007A89A5 /* Components */,
 				2D6689341F79E5DD001F56ED /* AppDelegate.swift */,
 				2D6689361F79E5DD001F56ED /* ViewController.swift */,
@@ -167,6 +177,7 @@
 				2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */,
 				2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */,
 				2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */,
+				2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */,
 				2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */,
 			);
 			path = Components;
@@ -481,6 +492,7 @@
 				2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */,
 				2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */,
 				2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */,
+				2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */,
 				2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */,
 				2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */,
 				2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */,

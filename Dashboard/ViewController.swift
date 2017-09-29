@@ -24,23 +24,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
-//        let custom = Triangle(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//        cell.statusArrow.addSubview(custom)
-        cell.statusArrow.changeColor()
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
+            cell.titleLabel.text = "Laba Bersih"
+            cell.descriptionLabel.text = "%Terhadap RKAP"
+            cell.statusArrow.changeColor()
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell
+            cell.titleLabel.text = "Proyek Kons & Fab"
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell
+            cell.titleLabel.text = "Proyek O & M"
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
+            cell.titleLabel.text = "Score Card"
+            cell.descriptionLabel.text = "%Terhadap Target"
+            cell.statusArrow.changeColor()
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
+            cell.titleLabel.text = ""
+            cell.descriptionLabel.text = ""
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-    
-    
-
-
 }
 
