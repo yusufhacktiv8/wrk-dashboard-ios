@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Main View Controller-->
+        <!--Summary-->
         <scene sceneID="dKD-Uu-y7T">
             <objects>
                 <viewController id="f6k-8K-G89" customClass="MainViewController" customModule="Dashboard" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,8 +56,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egE-8r-iU6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Q4s-x2-1oz"/>
+                    <navigationItem key="navigationItem" title="Summary" id="7id-xg-sVf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Afl-px-8hB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="DPV-P9-Bkp">
+                            <connections>
+                                <action selector="searchButtonDidTouch:" destination="f6k-8K-G89" id="C4F-e8-HBc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="monthYearLabel" destination="qHS-0N-yaZ" id="KZ9-TE-I26"/>
                         <segue destination="lrY-yo-53n" kind="show" identifier="ShowMonthYearPickerSegue" id="dAk-NT-KPn"/>
                     </connections>
                 </viewController>
@@ -90,7 +98,11 @@
                         <viewLayoutGuide key="safeArea" id="OIJ-Uh-xaX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select Month" id="H2a-Xl-Y1O">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KjU-QI-JF3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ck6-Ns-U5V">
+                            <connections>
+                                <action selector="selectMonthYear:" destination="lrY-yo-53n" id="Eeg-gF-FmM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="monthDatePickerView" destination="30k-rJ-LWH" id="bnz-SD-nWk"/>

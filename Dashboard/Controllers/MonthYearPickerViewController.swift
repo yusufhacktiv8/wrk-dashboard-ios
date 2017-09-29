@@ -11,32 +11,32 @@ import UIKit
 class MonthYearPickerViewController: UIViewController {
     
     @IBOutlet weak var monthDatePickerView: UIView!
-    var selectedMonth: Int = 1
-    var selectedYear: Int = 2008
+    var selectedMonth: Int = Constant.defaultMonth
+    var selectedYear: Int = Constant.defaultYear
+    var delegate: MonthYearPickerDelegate?
+    var monthPickerView: MonthYearPickerView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let monthYearPicker = MonthYearPickerView()
+        self.monthPickerView = monthYearPicker
         monthDatePickerView.addSubview(monthYearPicker)
         
-        monthYearPicker.selectRow(selectedMonth, inComponent: 0, animated: false)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        monthYearPicker.month = selectedMonth
+        monthYearPicker.year = selectedYear
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func selectMonthYear(_ sender: Any) {
+        if let theDelegate = self.delegate {
+            theDelegate.monthYearSelected(month: monthPickerView!.month, year: monthPickerView!.year)
+        }
+        performSegueToReturnBack()
     }
-    */
+    
+}
 
+protocol MonthYearPickerDelegate {
+    func monthYearSelected(month: Int, year: Int)
 }
