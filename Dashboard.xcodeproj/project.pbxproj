@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3B36671F7DE2AB009E9E65 /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B36661F7DE2AB009E9E65 /* MonthYearPickerView.swift */; };
+		2D3B36691F7DE413009E9E65 /* MonthYearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */; };
 		2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */; };
 		2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */; };
 		2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */; };
 		2D5E80041F7DC8BF0065B656 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80031F7DC8BF0065B656 /* MainViewController.swift */; };
+		2D63C83B1F7DCD680056E8BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D63C83A1F7DCD680056E8BF /* Constant.swift */; };
 		2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689341F79E5DD001F56ED /* AppDelegate.swift */; };
 		2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6689361F79E5DD001F56ED /* ViewController.swift */; };
 		2D66893A1F79E5DD001F56ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6689381F79E5DD001F56ED /* Main.storyboard */; };
@@ -47,10 +50,13 @@
 		1DF25D03480E6536FC84A187 /* Pods-DashboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DashboardUITests/Pods-DashboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		23D5393780292FE68267E4A7 /* Pods-DashboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashboardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DashboardUITests/Pods-DashboardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2CBAAD23385221E30C4F6755 /* Pods-DashboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DashboardTests/Pods-DashboardTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D3B36661F7DE2AB009E9E65 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerViewController.swift; sourceTree = "<group>"; };
 		2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D5E80031F7DC8BF0065B656 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2D63C83A1F7DCD680056E8BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2D6689311F79E5DD001F56ED /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6689341F79E5DD001F56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6689361F79E5DD001F56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2D3B366A1F7E3C78009E9E65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2D5E80021F7DBCC90065B656 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +157,7 @@
 		2D6689331F79E5DD001F56ED /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				2D3B366A1F7E3C78009E9E65 /* Controllers */,
 				2D5E80021F7DBCC90065B656 /* Helpers */,
 				2DE0FB281F7A0388007A89A5 /* Components */,
 				2D6689341F79E5DD001F56ED /* AppDelegate.swift */,
@@ -152,6 +167,7 @@
 				2D66893D1F79E5DD001F56ED /* LaunchScreen.storyboard */,
 				2D6689401F79E5DD001F56ED /* Info.plist */,
 				2D5E80031F7DC8BF0065B656 /* MainViewController.swift */,
+				2D63C83A1F7DCD680056E8BF /* Constant.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -182,6 +198,7 @@
 				2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */,
 				2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */,
 				2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */,
+				2D3B36661F7DE2AB009E9E65 /* MonthYearPickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -475,10 +492,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -494,10 +513,13 @@
 			files = (
 				2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */,
 				2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */,
+				2D63C83B1F7DCD680056E8BF /* Constant.swift in Sources */,
 				2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */,
 				2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */,
 				2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */,
+				2D3B36671F7DE2AB009E9E65 /* MonthYearPickerView.swift in Sources */,
 				2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */,
+				2D3B36691F7DE413009E9E65 /* MonthYearPickerViewController.swift in Sources */,
 				2D6689351F79E5DD001F56ED /* AppDelegate.swift in Sources */,
 				2D5E80041F7DC8BF0065B656 /* MainViewController.swift in Sources */,
 			);

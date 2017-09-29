@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class MainViewController: UIViewController {
 
@@ -15,21 +16,15 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func monthSelectDidTouch(_ sender: Any) {
+        performSegue(withIdentifier: "ShowMonthYearPickerSegue", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destinationVC  = segue.destination as? MonthYearPickerViewController
+        destinationVC?.selectedYear = 2017
+        destinationVC?.selectedMonth = 9
     }
-    */
-
+    
 }

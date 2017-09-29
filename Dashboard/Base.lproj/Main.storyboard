@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QfB-eh-Bnw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,6 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Regular</string>
         </array>
@@ -23,13 +25,80 @@
                     <view key="view" contentMode="scaleToFill" id="EyK-Wb-PKv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oe1-gI-4EQ" userLabel="Month Picker Container">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-0N-yaZ">
+                                        <rect key="frame" x="164.5" y="1" width="46" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="Month">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="monthSelectDidTouch:" destination="f6k-8K-G89" eventType="touchUpInside" id="2La-Rz-IP1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.39215686274509803" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qHS-0N-yaZ" firstAttribute="centerY" secondItem="oe1-gI-4EQ" secondAttribute="centerY" id="Ou2-eS-N0E"/>
+                                    <constraint firstAttribute="height" constant="35" id="RL2-E8-ut4"/>
+                                    <constraint firstItem="qHS-0N-yaZ" firstAttribute="centerX" secondItem="oe1-gI-4EQ" secondAttribute="centerX" id="ok0-YH-qWT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oe1-gI-4EQ" firstAttribute="trailing" secondItem="egE-8r-iU6" secondAttribute="trailing" id="Pdh-bp-z9U"/>
+                            <constraint firstItem="oe1-gI-4EQ" firstAttribute="top" secondItem="egE-8r-iU6" secondAttribute="top" id="X1y-Cu-mAw"/>
+                            <constraint firstItem="oe1-gI-4EQ" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="cDe-MA-Wg9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="egE-8r-iU6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q4s-x2-1oz"/>
+                    <connections>
+                        <segue destination="lrY-yo-53n" kind="show" identifier="ShowMonthYearPickerSegue" id="dAk-NT-KPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvz-NI-pDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-567"/>
+            <point key="canvasLocation" x="476" y="-567.16641679160421"/>
+        </scene>
+        <!--Select Month-->
+        <scene sceneID="QUD-5a-B56">
+            <objects>
+                <viewController storyboardIdentifier="monthYearPickerViewController" modalPresentationStyle="formSheet" id="lrY-yo-53n" customClass="MonthYearPickerViewController" customModule="Dashboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kky-Ei-nLV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30k-rJ-LWH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="R96-a8-lcZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OIJ-Uh-xaX" firstAttribute="trailing" secondItem="30k-rJ-LWH" secondAttribute="trailing" id="B4E-8d-zC4"/>
+                            <constraint firstItem="30k-rJ-LWH" firstAttribute="top" secondItem="OIJ-Uh-xaX" secondAttribute="top" id="NRa-43-wfp"/>
+                            <constraint firstItem="30k-rJ-LWH" firstAttribute="leading" secondItem="OIJ-Uh-xaX" secondAttribute="leading" id="qzD-R7-9YT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OIJ-Uh-xaX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Month" id="H2a-Xl-Y1O">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KjU-QI-JF3"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="monthDatePickerView" destination="30k-rJ-LWH" id="bnz-SD-nWk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQQ-Jb-8J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="-567"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -239,7 +308,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-327" y="164"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AL4-Bb-c3A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QfB-eh-Bnw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aly-fD-eYm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f6k-8K-G89" kind="relationship" relationship="rootViewController" id="lZQ-cx-CuL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luq-qC-iVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-327" y="-567"/>
         </scene>
     </scenes>
 </document>

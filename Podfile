@@ -7,6 +7,7 @@ target 'Dashboard' do
 
   # Pods for Dashboard
   pod 'Charts'
+  pod 'PopupDialog', '~> 0.5'
 
   target 'DashboardTests' do
     inherit! :search_paths
