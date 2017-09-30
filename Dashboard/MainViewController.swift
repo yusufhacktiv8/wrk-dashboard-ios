@@ -70,7 +70,11 @@ class MainViewController: UIViewController, MonthYearPickerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         let chartViewController = storyboard.instantiateViewController(withIdentifier: "chartViewController") as! ChartViewController
+        
         scrollPageContainer.addSubview(chartViewController.view)
+        chartViewController.view.frame = scrollPageContainer.bounds
+        chartViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
 
     }
 }

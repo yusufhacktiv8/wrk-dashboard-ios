@@ -20,14 +20,15 @@ class ChartViewController: UIViewController {
     }
     
     private func initChartViews() {
-        let chartView = DashboardChart()
+        let chartView = UIView()
+        chartView.backgroundColor = UIColor.green
         
-        chartStackView.addArrangedSubview(chartView)
-        
-        chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor, multiplier: 1).isActive = true
-        chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor, multiplier: 1).isActive = true
-        chartView.centerXAnchor.constraint(equalTo: chartStackView.centerXAnchor, constant: 0.333).isActive = true
-        chartView.centerYAnchor.constraint(equalTo: chartStackView.centerYAnchor).isActive = true
+//        chartStackView.addArrangedSubview(chartView)
+//        
+//        chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor, multiplier: 1).isActive = true
+//        chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor, multiplier: 1).isActive = true
+//        chartView.centerXAnchor.constraint(equalTo: chartScrollView.centerXAnchor).isActive = true
+//        chartView.centerYAnchor.constraint(equalTo: chartStackView.centerYAnchor).isActive = true
         
         
     }
