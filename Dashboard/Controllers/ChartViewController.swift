@@ -20,37 +20,40 @@ class ChartViewController: UIViewController {
     }
     
     private func initChartViews() {
-        var chartView = UIView()
-        chartView.backgroundColor = UIColor.green
+        var chartView = initChart1()
         chartStackView.addArrangedSubview(chartView)
-        
         chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor).isActive = true
         chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor).isActive = true
         
-        chartView = UIView()
+        chartView = DashboardChart()
         chartView.backgroundColor = UIColor.blue
         chartStackView.addArrangedSubview(chartView)
         
         chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor).isActive = true
         chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor).isActive = true
         
-        chartView = UIView()
+        chartView = DashboardChart()
         chartView.backgroundColor = UIColor.yellow
         chartStackView.addArrangedSubview(chartView)
         
         chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor).isActive = true
         chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor).isActive = true
-        
-//        chartView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-//        chartView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        
-//        chartView.widthAnchor.constraint(equalTo: chartScrollView.widthAnchor, multiplier: 1).isActive = true
-//        chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor, multiplier: 1).isActive = true
-//        chartView.centerXAnchor.constraint(equalTo: chartScrollView.centerXAnchor).isActive = true
-//        chartView.centerYAnchor.constraint(equalTo: chartStackView.centerYAnchor).isActive = true
-        
-        
-        
-        
+    }
+    
+    private func initChart1() -> DashboardChart {
+        let chartView = DashboardChart()
+        chartView.backgroundColor = UIColor(red:0.22, green:0.40, blue:0.71, alpha:1.0)
+        chartView.valueLabelColor = UIColor.white
+        chartView.circle1Color = UIColor.yellow
+        chartView.legend1Color = UIColor.white
+        chartView.circle2Color = UIColor.blue
+        chartView.legend2Color = UIColor.white
+        chartView.title = "Omzet Kontrak"
+        chartView.titleColor = UIColor.white
+        chartView.legend1 = "Realisasi"
+        chartView.legend1Color = UIColor.white
+        chartView.legend2 = "Rencana"
+        chartView.legend2Color = UIColor.white
+        return chartView
     }
 }

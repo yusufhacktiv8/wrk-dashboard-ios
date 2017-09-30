@@ -33,7 +33,7 @@
                                         <rect key="frame" x="296" y="-13.5" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.22745098039215686" green="0.39215686274509803" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.3921568627" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="bJ9-RI-pxV" firstAttribute="centerY" secondItem="Pcg-99-Gjr" secondAttribute="centerY" id="FAM-ef-klh"/>
                                     <constraint firstAttribute="trailing" secondItem="bJ9-RI-pxV" secondAttribute="trailing" constant="40" id="FVi-mT-rvh"/>
@@ -100,7 +100,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.22745098039215686" green="0.39215686274509803" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.3921568627" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qHS-0N-yaZ" firstAttribute="centerY" secondItem="oe1-gI-4EQ" secondAttribute="centerY" id="Ou2-eS-N0E"/>
                                     <constraint firstAttribute="height" constant="35" id="RL2-E8-ut4"/>
