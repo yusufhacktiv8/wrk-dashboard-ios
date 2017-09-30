@@ -18,6 +18,66 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Chart View Controller-->
+        <scene sceneID="KV0-J5-KmV">
+            <objects>
+                <viewController storyboardIdentifier="chartViewController" id="gMA-fe-dvq" customClass="ChartViewController" customModule="Dashboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7gP-dS-HCq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcg-99-Gjr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="10"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-RI-pxV">
+                                        <rect key="frame" x="296" y="-13.5" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.39215686274509803" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bJ9-RI-pxV" firstAttribute="centerY" secondItem="Pcg-99-Gjr" secondAttribute="centerY" id="FAM-ef-klh"/>
+                                    <constraint firstAttribute="trailing" secondItem="bJ9-RI-pxV" secondAttribute="trailing" constant="40" id="FVi-mT-rvh"/>
+                                    <constraint firstAttribute="height" constant="10" id="rs9-Jp-Rsb"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayv-GN-d7n">
+                                <rect key="frame" x="0.0" y="30" width="375" height="270"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eID-Xo-kWq">
+                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="270"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eID-Xo-kWq" firstAttribute="top" secondItem="ayv-GN-d7n" secondAttribute="top" id="DjX-cz-17V"/>
+                                    <constraint firstAttribute="bottom" secondItem="eID-Xo-kWq" secondAttribute="bottom" id="OAy-j5-88v"/>
+                                    <constraint firstAttribute="trailing" secondItem="eID-Xo-kWq" secondAttribute="trailing" id="Wnq-6o-gi3"/>
+                                    <constraint firstItem="eID-Xo-kWq" firstAttribute="leading" secondItem="ayv-GN-d7n" secondAttribute="leading" id="cSL-Zi-xY1"/>
+                                    <constraint firstItem="eID-Xo-kWq" firstAttribute="width" secondItem="ayv-GN-d7n" secondAttribute="width" multiplier="3" id="fyn-ZN-aJu"/>
+                                    <constraint firstAttribute="height" constant="270" id="mHc-30-ZCC"/>
+                                    <constraint firstItem="eID-Xo-kWq" firstAttribute="height" secondItem="ayv-GN-d7n" secondAttribute="height" id="rXq-Nx-d4F"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayv-GN-d7n" firstAttribute="top" secondItem="Pcg-99-Gjr" secondAttribute="bottom" id="M5f-3A-7l7"/>
+                            <constraint firstItem="ayv-GN-d7n" firstAttribute="leading" secondItem="0Sp-0X-APx" secondAttribute="leading" id="a0B-Cq-16O"/>
+                            <constraint firstItem="Pcg-99-Gjr" firstAttribute="top" secondItem="0Sp-0X-APx" secondAttribute="top" id="eKv-El-4Lc"/>
+                            <constraint firstItem="Pcg-99-Gjr" firstAttribute="leading" secondItem="0Sp-0X-APx" secondAttribute="leading" id="rMT-0L-ARs"/>
+                            <constraint firstItem="0Sp-0X-APx" firstAttribute="trailing" secondItem="ayv-GN-d7n" secondAttribute="trailing" id="wQW-fo-1aS"/>
+                            <constraint firstItem="0Sp-0X-APx" firstAttribute="trailing" secondItem="Pcg-99-Gjr" secondAttribute="trailing" id="zdp-Hm-DeL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Sp-0X-APx"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartScrollView" destination="ayv-GN-d7n" id="ECc-rh-lgv"/>
+                        <outlet property="chartStackView" destination="eID-Xo-kWq" id="JGU-h6-SRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYy-Ea-Kug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="-1307"/>
+        </scene>
         <!--Summary-->
         <scene sceneID="dKD-Uu-y7T">
             <objects>
@@ -47,12 +107,35 @@
                                     <constraint firstItem="qHS-0N-yaZ" firstAttribute="centerX" secondItem="oe1-gI-4EQ" secondAttribute="centerX" id="ok0-YH-qWT"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rp-LG-M7Q">
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-sA-5Db">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Gt0-SM-AeT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mcb-sA-5Db" firstAttribute="top" secondItem="5rp-LG-M7Q" secondAttribute="top" id="5t3-f8-NGD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mcb-sA-5Db" secondAttribute="bottom" id="BL7-lF-jyi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mcb-sA-5Db" secondAttribute="trailing" id="EYm-17-gDa"/>
+                                    <constraint firstItem="Mcb-sA-5Db" firstAttribute="centerX" secondItem="5rp-LG-M7Q" secondAttribute="centerX" id="qyk-cT-3Zd"/>
+                                    <constraint firstItem="Mcb-sA-5Db" firstAttribute="leading" secondItem="5rp-LG-M7Q" secondAttribute="leading" id="sd0-iU-34l"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5rp-LG-M7Q" firstAttribute="top" secondItem="oe1-gI-4EQ" secondAttribute="bottom" id="482-qZ-2AP"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="trailing" secondItem="egE-8r-iU6" secondAttribute="trailing" id="Pdh-bp-z9U"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="top" secondItem="egE-8r-iU6" secondAttribute="top" id="X1y-Cu-mAw"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="cDe-MA-Wg9"/>
+                            <constraint firstItem="5rp-LG-M7Q" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="cbZ-hq-aOh"/>
+                            <constraint firstItem="egE-8r-iU6" firstAttribute="trailing" secondItem="5rp-LG-M7Q" secondAttribute="trailing" id="nk2-vp-yV4"/>
+                            <constraint firstItem="egE-8r-iU6" firstAttribute="bottom" secondItem="5rp-LG-M7Q" secondAttribute="bottom" id="vRU-By-lKQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egE-8r-iU6"/>
                     </view>
@@ -66,6 +149,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="monthYearLabel" destination="qHS-0N-yaZ" id="KZ9-TE-I26"/>
+                        <outlet property="scrollPageContainer" destination="Mcb-sA-5Db" id="6UG-QF-7r2"/>
                         <segue destination="lrY-yo-53n" kind="show" identifier="ShowMonthYearPickerSegue" id="dAk-NT-KPn"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D3B36671F7DE2AB009E9E65 /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B36661F7DE2AB009E9E65 /* MonthYearPickerView.swift */; };
 		2D3B36691F7DE413009E9E65 /* MonthYearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */; };
+		2D3B366C1F7E6003009E9E65 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B366B1F7E6003009E9E65 /* ChartViewController.swift */; };
 		2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */; };
 		2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */; };
 		2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */; };
@@ -52,6 +53,7 @@
 		2CBAAD23385221E30C4F6755 /* Pods-DashboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DashboardTests/Pods-DashboardTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D3B36661F7DE2AB009E9E65 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
 		2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerViewController.swift; sourceTree = "<group>"; };
+		2D3B366B1F7E6003009E9E65 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		2D5E7FFC1F7CEFE00065B656 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		2D5E7FFE1F7CF16A0065B656 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		2D5E80001F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				2D3B36681F7DE413009E9E65 /* MonthYearPickerViewController.swift */,
+				2D3B366B1F7E6003009E9E65 /* ChartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				2D63C83B1F7DCD680056E8BF /* Constant.swift in Sources */,
 				2D6689371F79E5DD001F56ED /* ViewController.swift in Sources */,
 				2D5E80011F7D43EB0065B656 /* SimpleSummaryTableViewCell.swift in Sources */,
+				2D3B366C1F7E6003009E9E65 /* ChartViewController.swift in Sources */,
 				2D5E7FFF1F7CF16A0065B656 /* Triangle.swift in Sources */,
 				2D3B36671F7DE2AB009E9E65 /* MonthYearPickerView.swift in Sources */,
 				2D5E7FFD1F7CEFE00065B656 /* SummaryTableViewCell.swift in Sources */,

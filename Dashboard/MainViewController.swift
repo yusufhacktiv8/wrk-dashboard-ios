@@ -17,11 +17,13 @@ class MainViewController: UIViewController, MonthYearPickerDelegate {
     var selectedYear: Int = Constant.defaultYear
 
     @IBOutlet weak var monthYearLabel: UIButton!
+    @IBOutlet weak var scrollPageContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initMonthYear()
         setMonthYearLabel()
+        initChartView()
     }
     
     @IBAction func monthSelectDidTouch(_ sender: Any) {
@@ -62,6 +64,14 @@ class MainViewController: UIViewController, MonthYearPickerDelegate {
         self.selectedMonth = month
         self.selectedYear = year
         setMonthYearLabel()
+    }
+    
+    private func initChartView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        let chartViewController = storyboard.instantiateViewController(withIdentifier: "chartViewController") as! ChartViewController
+        scrollPageContainer.addSubview(chartViewController.view)
+
     }
 }
 
