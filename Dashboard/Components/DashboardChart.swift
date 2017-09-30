@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 @IBDesignable class DashboardChart: UIView {
 
@@ -25,6 +26,7 @@ import UIKit
     var legend1Circle: UIView? = nil
     var legend2Label: UILabel? = nil
     var legend2Circle: UIView? = nil
+    var chart: LineChartView? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,6 +106,7 @@ import UIKit
         setupLegend1Circle()
         setupLegend2Label()
         setupLegend2Circle()
+        setupChart()
     }
     
     private func setupValueLabel() {
@@ -276,6 +279,26 @@ import UIKit
         shapeLayer.path = circlePath.cgPath
         shapeLayer.fillColor = circle2Color.cgColor
         legend2Circle.layer.addSublayer(shapeLayer)
+    }
+    
+    private func setupChart() {
+        
+        if self.chart != nil {
+            self.chart?.removeFromSuperview()
+        } else {
+            self.chart = LineChartView()
+        }
+        
+        let chart = self.chart!
+        
+        chart.translatesAutoresizingMaskIntoConstraints = false
+        let margins = self.layoutMarginsGuide
+        
+        addSubview(chart)
+        chart.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        chart.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+        chart.topAnchor.constraint(equalTo: margins.topAnchor, constant: 90).isActive = true
+        chart.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
     }
     
 }
