@@ -27,6 +27,7 @@ import Charts
     var legend2Label: UILabel? = nil
     var legend2Circle: UIView? = nil
     var chart: LineChartView? = nil
+    var chartData: LineChartData? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -299,6 +300,32 @@ import Charts
         chart.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
         chart.topAnchor.constraint(equalTo: margins.topAnchor, constant: 90).isActive = true
         chart.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
+        
+        chart.leftAxis.spaceBottom = 0
+        
+        chart.xAxis.labelPosition = .top
+        chart.chartDescription?.text = ""
+        chart.pinchZoomEnabled = true
+        
+        chart.drawBordersEnabled = false
+        chart.rightAxis.enabled = false
+        
+        
+        chart.xAxis.gridColor = UIColor.lightGray
+        chart.legend.enabled = false
+        
+        chart.xAxis.labelTextColor = UIColor.white
+        chart.xAxis.drawAxisLineEnabled = false
+        
+        chart.leftAxis.enabled = false
+        
+        chart.setViewPortOffsets(left: 0, top: 15, right: 0, bottom: 0)
     }
     
+    func setChartData(chartData: LineChartData, xValues: [String]) {
+        self.chartData = chartData
+        chart?.xAxis.valueFormatter = IndexAxisValueFormatter(values: xValues)
+        chart?.xAxis.granularity = 1.0
+        chart?.data = self.chartData!
+    }
 }

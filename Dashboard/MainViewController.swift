@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PopupDialog
 
 class MainViewController: UIViewController, MonthYearPickerDelegate {
     
@@ -74,8 +73,6 @@ class MainViewController: UIViewController, MonthYearPickerDelegate {
         scrollPageContainer.addSubview(chartViewController.view)
         chartViewController.view.frame = scrollPageContainer.bounds
         chartViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-
     }
 }
 
