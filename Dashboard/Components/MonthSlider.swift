@@ -40,7 +40,7 @@ import UIKit
     @objc func ratingButtonTapped(button: UIButton) {
         print("Button pressed 👍")
         resetBackgroundColors()
-        button.backgroundColor = UIColor.lightGray
+        button.backgroundColor = UIColor(red:0.84, green:0.86, blue:0.87, alpha:1.0)
         button.setTitleColor(UIColor.white, for: .normal)
     }
     
@@ -59,7 +59,7 @@ import UIKit
             case 4:
                 title = "APR"
             case 5:
-                title = "MEI"
+                title = "MAY"
             case 6:
                 title = "JUN"
             case 7:

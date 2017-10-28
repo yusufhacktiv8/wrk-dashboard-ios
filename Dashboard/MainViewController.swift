@@ -20,12 +20,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chartContainer: UIView!
     @IBOutlet weak var summaryTableView: UITableView!
     
+    var netProfit: NetProfit?
+    var decimalFormatter = NumberFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initMonthYear()
         setMonthYearLabel()
         initChartView()
         initTable()
+        loadTableData()
     }
     
     @IBAction func monthSelectDidTouch(_ sender: Any) {
@@ -78,6 +82,23 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         chartViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
+    func loadNetProfitData() -> Void {
+        
+        DashboardService.getNetProfitData(year: self.selectedYear, month: self.selectedMonth) { netProfit in
+            
+            self.netProfit = netProfit
+            
+            self.summaryTableView.reloadData()
+            
+//            self.isNetProfitLoaded = true
+//            self.updateIndicatorState()
+        }
+    }
+    
+    func loadTableData() {
+        loadNetProfitData()
+    }
+    
     private func initTable() {
         self.summaryTableView.delegate = self
         self.summaryTableView.dataSource = self
@@ -98,6 +119,36 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.titleLabel.text = "Laba Bersih"
             cell.descriptionLabel.text = "%Terhadap RKAP"
             cell.statusArrow.changeColor()
+            
+            if let netProfit = self.netProfit {
+                cell.amountLabel.text = self.decimalFormatter.string(from: NSNumber(value: netProfit.netProfit))
+                
+                var progressInPercentage = 0.0
+                if netProfit.rkap != 0{
+                    progressInPercentage = (netProfit.netProfit / netProfit.rkap) * 100
+                    cell.percentageLabel.text = self.decimalFormatter.string(from: NSNumber(value: progressInPercentage))! + "%"
+                }else{
+                    cell.percentageLabel.text = "-"
+                }
+                
+                var prevProgressInPercentage = 0.0;
+                if(netProfit.prevRkap > 0){
+                    prevProgressInPercentage = (netProfit.prevNetProfit / netProfit.prevRkap) * 100;
+                }
+                
+//                if progressInPercentage > prevProgressInPercentage{
+//                    statusImageName = "up_trend";
+//                    percentageLabelColor = UIColor(red:0.21, green:0.63, blue:0.00, alpha:1.0)
+//                }else if (progressInPercentage < prevProgressInPercentage){
+//                    statusImageName = "down_trend_red";
+//                    percentageLabelColor = UIColor(red:0.82, green:0.01, blue:0.11, alpha:1.0)
+//                }
+                
+            }else{
+                cell.amountLabel.text = " - "
+            }
+            
+//            cell.percentageLabel.textColor = percentageLabelColor
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell

@@ -107,6 +107,13 @@
                                     <constraint firstItem="qHS-0N-yaZ" firstAttribute="centerX" secondItem="oe1-gI-4EQ" secondAttribute="centerX" id="ok0-YH-qWT"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2D-tD-Umv" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="99" width="375" height="150"/>
+                                <color key="backgroundColor" red="0.22597372531890869" green="0.39173924922943115" blue="0.72931569814682007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ewI-zc-Y9p"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rp-LG-M7Q">
                                 <rect key="frame" x="0.0" y="99" width="375" height="768"/>
                                 <subviews>
@@ -127,6 +134,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="748" height="40"/>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="TGy-WG-Adb" secondAttribute="trailing" id="TnU-au-3uG"/>
                                                     <constraint firstAttribute="height" constant="40" id="aHg-hY-dkG"/>
@@ -289,8 +297,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5rp-LG-M7Q" firstAttribute="top" secondItem="oe1-gI-4EQ" secondAttribute="bottom" id="482-qZ-2AP"/>
+                            <constraint firstItem="Z2D-tD-Umv" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="K7G-6P-ii3"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="trailing" secondItem="egE-8r-iU6" secondAttribute="trailing" id="Pdh-bp-z9U"/>
+                            <constraint firstItem="Z2D-tD-Umv" firstAttribute="top" secondItem="oe1-gI-4EQ" secondAttribute="bottom" id="Ps6-RW-Hnf"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="top" secondItem="egE-8r-iU6" secondAttribute="top" id="X1y-Cu-mAw"/>
+                            <constraint firstItem="egE-8r-iU6" firstAttribute="trailing" secondItem="Z2D-tD-Umv" secondAttribute="trailing" id="ZL5-ew-gg3"/>
                             <constraint firstItem="oe1-gI-4EQ" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="cDe-MA-Wg9"/>
                             <constraint firstItem="5rp-LG-M7Q" firstAttribute="leading" secondItem="egE-8r-iU6" secondAttribute="leading" id="cbZ-hq-aOh"/>
                             <constraint firstItem="egE-8r-iU6" firstAttribute="trailing" secondItem="5rp-LG-M7Q" secondAttribute="trailing" id="nk2-vp-yV4"/>

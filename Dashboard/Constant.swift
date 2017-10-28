@@ -13,5 +13,5 @@ struct Constant {
     static let MAIN_COLOR = UIColor(red:0.23, green:0.39, blue:0.73, alpha:1.0)
     static let defaultMonth: Int = 1
     static let defaultYear: Int = 2008
-    static let months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"]
+    static let months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 }
