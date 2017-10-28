@@ -297,9 +297,9 @@ import Charts
         
         addSubview(chart)
         chart.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        chart.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+        chart.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: -8).isActive = true
         chart.topAnchor.constraint(equalTo: margins.topAnchor, constant: 90).isActive = true
-        chart.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
+        chart.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 8).isActive = true
         
         chart.leftAxis.spaceBottom = 0
         
