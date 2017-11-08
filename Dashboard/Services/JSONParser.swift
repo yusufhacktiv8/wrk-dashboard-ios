@@ -45,4 +45,14 @@ struct JSONParser {
         
         return projectInfo
     }
+    
+    static func parseScoreCard(data: AnyObject) -> ScoreCard {
+        let month = data["month"] as? Int ?? 0
+        let year = data["year"] as? Int ?? 0
+        let total = data["total"] as? Int ?? 0
+        let prevTotal = data["prevTotal"] as? Int ?? 0
+        let target = data["target"] as? Int ?? 0
+        
+        return ScoreCard(month: month, year: year, total: total, prevTotal: prevTotal, target: target)
+    }
 }

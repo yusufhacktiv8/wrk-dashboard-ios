@@ -22,10 +22,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var netProfit: NetProfit?
     var projectInfo: ProjectInfo?
+    var scoreCard: ScoreCard?
+    
     var decimalFormatter = NumberFormatter()
+    var numberFormatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initFormatter()
         initMonthYear()
         setMonthYearLabel()
         initChartView()
@@ -39,6 +43,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func searchButtonDidTouch(_ sender: Any) {
         showFilter()
+    }
+    
+    private func initFormatter() {
+        self.decimalFormatter.numberStyle = NumberFormatter.Style.decimal
+        self.decimalFormatter.minimumFractionDigits = 2
+        self.decimalFormatter.maximumFractionDigits = 2
+        
+        self.numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        self.numberFormatter.minimumFractionDigits = 0
+        self.numberFormatter.maximumFractionDigits = 0
     }
     
     private func showFilter() {
@@ -108,9 +122,23 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func loadScoreCardData() -> Void {
+        
+        DashboardService.getScoreCardData(year: self.selectedYear, month: self.selectedMonth) { scoreCard in
+            
+            self.scoreCard = scoreCard
+            
+            self.summaryTableView.reloadData()
+            
+//            self.isScoreCardLoaded = true
+//            self.updateIndicatorState()
+        }
+    }
+    
     func loadTableData() {
         loadNetProfitData()
         loadProjectInfo()
+        loadScoreCardData()
     }
     
     private func initTable() {
@@ -169,7 +197,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.titleLabel.text = "Proyek Kons & Fab"
             if let projectInfo = self.projectInfo {
                 
-                cell.amountLabel.text = self.decimalFormatter.string(from: NSNumber(value: projectInfo.projectCount))
+                cell.amountLabel.text = self.numberFormatter.string(from: NSNumber(value: projectInfo.projectCount))
                 
 //                let lateProjectCount = projectInfo.lateProjectCount;
 //                let prevLateProjectCount = projectInfo.prevLateProjectCount;
@@ -186,7 +214,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.titleLabel.text = "Proyek O & M"
             if let projectInfo = self.projectInfo {
                 
-                cell.amountLabel.text = self.decimalFormatter.string(from: NSNumber(value: projectInfo.projectOMCount!))
+                cell.amountLabel.text = self.numberFormatter.string(from: NSNumber(value: projectInfo.projectOMCount!))
                 
 //                let lateProjectCount = projectInfo.lateProjectCount;
 //                let prevLateProjectCount = projectInfo.prevLateProjectCount;
@@ -203,6 +231,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.titleLabel.text = "Score Card"
             cell.descriptionLabel.text = "%Terhadap Target"
             cell.statusArrow.changeColor()
+            
+            if let scoreCard = self.scoreCard {
+                var progressInPercentage = 0.0;
+                if (scoreCard.target > 0) {
+                    progressInPercentage = (Double(scoreCard.total) / Double(scoreCard.target)) * 100;
+                    cell.percentageLabel.text = self.decimalFormatter.string(from: NSNumber(value: progressInPercentage))! + "%"
+                }else{
+                    cell.percentageLabel.text = "-"
+                }
+                
+                cell.amountLabel.text = numberFormatter.string(from: NSNumber(value: scoreCard.total))
+                
+//                let total = scoreCard.total;
+//                let prevTotal = scoreCard.prevTotal;
+//
+//                if(total > prevTotal){
+//                    statusImageName = "up_trend";
+//                    percentageLabelColor = UIColor(red:0.21, green:0.63, blue:0.00, alpha:1.0)
+//                }else if(total < prevTotal){
+//                    statusImageName = "down_trend_red";
+//                    percentageLabelColor = UIColor(red:0.82, green:0.01, blue:0.11, alpha:1.0)
+//                }
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
