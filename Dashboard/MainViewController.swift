@@ -21,6 +21,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var summaryTableView: UITableView!
     
     var netProfit: NetProfit?
+    var projectInfo: ProjectInfo?
     var decimalFormatter = NumberFormatter()
     
     override func viewDidLoad() {
@@ -95,8 +96,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func loadProjectInfo() -> Void {
+        DashboardService.getProjectInfoData(year: self.selectedYear, month: self.selectedMonth) { projectInfo in
+            
+            self.projectInfo = projectInfo
+            
+            self.summaryTableView.reloadData()
+            
+            //        self.isProjectIonfoLoaded = true
+            //        self.updateIndicatorState()
+        }
+    }
+    
     func loadTableData() {
         loadNetProfitData()
+        loadProjectInfo()
     }
     
     private func initTable() {
@@ -153,6 +167,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell
             cell.titleLabel.text = "Proyek Kons & Fab"
+            if let projectInfo = self.projectInfo {
+                
+                cell.amountLabel.text = self.decimalFormatter.string(from: NSNumber(value: projectInfo.projectCount))
+                
+//                let lateProjectCount = projectInfo.lateProjectCount;
+//                let prevLateProjectCount = projectInfo.prevLateProjectCount;
+                
+//                if(lateProjectCount < prevLateProjectCount){
+//                    statusImageName = "down_trend";
+//                }else if(lateProjectCount > prevLateProjectCount){
+//                    statusImageName = "up_trend_red";
+//                }
+            }
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell

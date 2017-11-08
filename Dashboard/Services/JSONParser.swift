@@ -25,4 +25,24 @@ struct JSONParser {
         let prevRkap = data["prevRkap"] as? Double ?? 0.0
         return NetProfit(month: month, year: year, netProfit: netProfit, prevNetProfit: prevNetProfit, rkap: rkap, prevRkap: prevRkap)
     }
+    
+    static func parseProjectInfo(data: AnyObject) -> ProjectInfo {
+        let month = data["month"] as? Int ?? 0
+        let year = data["year"] as? Int ?? 0
+        let projectCount = data["projectCount"] as? Int ?? 0
+        let lateProjectCount = data["lateProjectCount"] as? Int ?? 0
+        let prevLateProjectCount = data["prevLateProjectCount"] as? Int ?? 0
+        
+        let projectOMCount = data["projectOMCount"] as? Int ?? 0
+        let lateProjectOMCount = data["lateProjectOMCount"] as? Int ?? 0
+        let prevLateProjectOMCount = data["prevLateProjectOMCount"] as? Int ?? 0
+        
+        let projectInfo = ProjectInfo(month: month, year: year, projectCount: projectCount, lateProjectCount: lateProjectCount, prevLateProjectCount: prevLateProjectCount)
+        
+        projectInfo.projectOMCount = projectOMCount
+        projectInfo.lateProjectCount = lateProjectOMCount
+        projectInfo.prevLateProjectOMCount = prevLateProjectOMCount
+        
+        return projectInfo
+    }
 }

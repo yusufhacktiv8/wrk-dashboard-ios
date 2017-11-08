@@ -24,6 +24,4 @@ public class NetProfit {
         self.rkap = rkap
         self.prevRkap = prevRkap
     }
-    
-    
 }

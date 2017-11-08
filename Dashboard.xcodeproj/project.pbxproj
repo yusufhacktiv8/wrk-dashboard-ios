@@ -29,6 +29,7 @@
 		2DD56C601FA4F1E50061B21F /* NetProfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD56C5F1FA4F1E50061B21F /* NetProfit.swift */; };
 		2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */; };
 		2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */; };
+		2DF002031FB334A200F067FA /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF002021FB334A200F067FA /* ProjectInfo.swift */; };
 		2E9E96CB9BE788583DD04EDE /* Pods_Dashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1F52F619696214FEA5FB4C /* Pods_Dashboard.framework */; };
 		5FD51D914DFD8F9DDA2B9758 /* Pods_DashboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFC58273D4D70DC2D0558DB /* Pods_DashboardTests.framework */; };
 		C39F42A39ABD44FFF2CDABBD /* Pods_DashboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F83BF65BA3E2A5DDC18765 /* Pods_DashboardUITests.framework */; };
@@ -84,6 +85,7 @@
 		2DD56C5F1FA4F1E50061B21F /* NetProfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetProfit.swift; sourceTree = "<group>"; };
 		2DE0FB261F7A0370007A89A5 /* DashboardChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChart.swift; sourceTree = "<group>"; };
 		2DEE42141F7B7FD900BB6A52 /* MonthSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSlider.swift; sourceTree = "<group>"; };
+		2DF002021FB334A200F067FA /* ProjectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
 		6E9939B0A6A2151628954B86 /* Pods-Dashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.release.xcconfig"; sourceTree = "<group>"; };
 		99F83BF65BA3E2A5DDC18765 /* Pods_DashboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DashboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1F52F619696214FEA5FB4C /* Pods_Dashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 			children = (
 				2DC05D511F80A1D900490C21 /* Omzet.swift */,
 				2DD56C5F1FA4F1E50061B21F /* NetProfit.swift */,
+				2DF002021FB334A200F067FA /* ProjectInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE0FB271F7A0370007A89A5 /* DashboardChart.swift in Sources */,
+				2DF002031FB334A200F067FA /* ProjectInfo.swift in Sources */,
 				2DD56C601FA4F1E50061B21F /* NetProfit.swift in Sources */,
 				2DEE42151F7B7FD900BB6A52 /* MonthSlider.swift in Sources */,
 				2D1A11941F9E32B3004295A0 /* JSONParser.swift in Sources */,

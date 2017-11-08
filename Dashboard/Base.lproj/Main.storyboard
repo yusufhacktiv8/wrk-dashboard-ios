@@ -47,6 +47,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1125" height="270"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.22597372531890869" green="0.39173924922943115" blue="0.72931569814682007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eID-Xo-kWq" firstAttribute="top" secondItem="ayv-GN-d7n" secondAttribute="top" id="DjX-cz-17V"/>
                                     <constraint firstAttribute="bottom" secondItem="eID-Xo-kWq" secondAttribute="bottom" id="OAy-j5-88v"/>

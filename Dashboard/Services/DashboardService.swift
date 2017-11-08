@@ -86,4 +86,22 @@ public struct DashboardService {
         }
     }
     
+    public static func getProjectInfoData(year: Int, month: Int, myResponse: @escaping (ProjectInfo) -> ()) {
+        
+        let urlString = DashboardConstant.BASE_URL + ResourcePath.ProjectInfoData(year: year, month: month).description
+        
+        let username = "dea", password = "wrkadmin"
+        let credentialData = "\(username):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        
+        Alamofire.request(urlString, headers: headers).responseJSON { response in
+            if let JSON = response.result.value {
+                let projectInfo = JSONParser.parseProjectInfo(data: JSON as AnyObject)
+                myResponse(projectInfo)
+            }
+            
+        }
+    }
+    
 }
