@@ -184,6 +184,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleSummaryTableViewCell") as! SimpleSummaryTableViewCell
             cell.titleLabel.text = "Proyek O & M"
+            if let projectInfo = self.projectInfo {
+                
+                cell.amountLabel.text = self.decimalFormatter.string(from: NSNumber(value: projectInfo.projectOMCount!))
+                
+//                let lateProjectCount = projectInfo.lateProjectCount;
+//                let prevLateProjectCount = projectInfo.prevLateProjectCount;
+//
+//                if(lateProjectCount < prevLateProjectCount){
+//                    statusImageName = "down_trend";
+//                }else if(lateProjectCount > prevLateProjectCount){
+//                    statusImageName = "up_trend_red";
+//                }
+            }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTableViewCell") as! SummaryTableViewCell
